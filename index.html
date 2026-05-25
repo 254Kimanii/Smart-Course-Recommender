@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KCSE Smart Course Recommendation System</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🇰🇪 KCSE Smart Course Recommendation System</h1>
+      <p class="lead">Personalized university course recommendations based on your KCSE grades (A to E system)</p>
+    </header>
+
+    <main class="grid">
+      <section class="card form-card">
+        <h2>Student KCSE Profile</h2>
+        <form id="studentForm">
+          <label>Student Name <input type="text" id="name" placeholder="E.g., Achieng Omondi"></label>
+
+          <div class="grades">
+            <h3>KCSE Grades (A to E)</h3>
+            
+            <div class="section-title">📚 Core Subjects (Cluster 1 - Languages)</div>
+            <div class="row">
+              <label>English <select id="english" required>
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+              <label>Kiswahili <select id="kiswahili" required>
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+            </div>
+
+            <div class="section-title">🔢 Mathematics & Sciences (Cluster 2)</div>
+            <div class="row">
+              <label>Mathematics <select id="mathematics" required>
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+              <label>Physics <select id="physics">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+              <label>Chemistry <select id="chemistry">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+            </div>
+            <div class="row">
+              <label>Biology <select id="biology">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+            </div>
+
+            <div class="section-title">🌍 Humanities (Cluster 3)</div>
+            <div class="row">
+              <label>Geography <select id="geography">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+              <label>History <select id="history">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+              <label>CRE <select id="cre">
+                <option value="">Select</option><option>A</option><option>A-</option><option>B+</option><option>B</option><option>B-</option>
+                <option>C+</option><option>C</option><option>C-</option><option>D+</option><option>D</option><option>D-</option><option>E</option>
+              </select></label>
+            </div>
+          </div>
+
+          <label>Career Interest Area
+            <select id="interest">
+              <option value="ai">🤖 Artificial Intelligence</option>
+              <option value="cybersecurity">🔒 Cybersecurity</option>
+              <option value="data_science">📊 Data Science</option>
+              <option value="software_engineering">💻 Software Engineering</option>
+              <option value="networking">🌐 Networking</option>
+              <option value="computer_science">🖥️ Computer Science</option>
+              <option value="information_technology">📱 Information Technology</option>
+              <option value="actuarial_science">📈 Actuarial Science</option>
+              <option value="medicine">🏥 Medicine</option>
+              <option value="engineering">⚙️ Engineering</option>
+            </select>
+          </label>
+
+          <div class="completed">
+            <h3>Completed Prerequisites (if any)</h3>
+            <label><input type="checkbox" value="programming"> Programming</label>
+            <label><input type="checkbox" value="mathematics"> Advanced Mathematics</label>
+            <label><input type="checkbox" value="statistics"> Statistics</label>
+            <label><input type="checkbox" value="networking_basics"> Networking Basics</label>
+            <label><input type="checkbox" value="biology"> Biology</label>
+            <label><input type="checkbox" value="chemistry"> Chemistry</label>
+          </div>
+
+          <div class="actions">
+            <button id="submitBtn" type="submit">Get Recommendations</button>
+            <button id="sampleBtn" type="button">Load Sample Student (A- Student)</button>
+            <button id="sampleWeakBtn" type="button">Load Sample Student (C Student)</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card results-card">
+        <h2>📌 Course Recommendations</h2>
+        <div id="recommendations" class="results"></div>
+
+        <h3>📖 Detailed Explanation</h3>
+        <div id="explanationPanel" class="panel">Click on any course above to see why it was recommended.</div>
+
+        <h3>⚠️ Warnings / Risks</h3>
+        <div id="risksPanel" class="panel">No warnings.</div>
+
+        <div class="info-box">
+          <strong>ℹ️ KCSE Note:</strong> Minimum university entry requires C+ in at least two cluster subjects.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <strong>KCSE Course Recommendation System</strong> — Powered by Prolog | Based on Kenyan 8-4-4 System
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
